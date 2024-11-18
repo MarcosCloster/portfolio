@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+/* colors:
+azul oscuro clásico (#0A1828), turquesa (#178582), dorado (#BFA181)
+
+azul claro (#E9F1FA), azul brillante (#00ABE4), blanco (#FFFFFF)
+
+verde cardenal (#0C1A1A), verde azulado claro (#6ACFC7)
+
+https://sinantokmak.framer.website/
+
+*/
+
+body, html{
+    background-color: #292f36;
+}
+
+
+
+p{
+    color: #12f7d6;
+    font-size: 30px;
+}
