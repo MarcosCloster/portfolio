@@ -9,6 +9,10 @@ https://sinantokmak.framer.website/
 
 */
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body, html{
     background-color: #292f36;
 }
