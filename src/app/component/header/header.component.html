@@ -1,8 +1,11 @@
 <header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2">
-    <nav class="flex w-auto px-5 max-w gap-4 justify-center items-center text-center text-colorGreenWater rounded-full border border-transparent transition-all duration-400" [ngClass]="{'bg-gray-700 shadow-sm backdrop-blur-xl': isScrolled, 'bg-transparent': !isScrolled}">
-        <a class="relative block py-2" href="#proyectos">Proyectos</a>
-        <a class="relative block py-2" href="#skills">Skills</a>
-        <a class="relative block py-2" href="#sobreMi">Sobre Mi</a>
-        <a class="relative block py-2" href="#contacto">Contacto</a>
+    <nav
+      class="flex w-auto py-1 px-5 max-w gap-4 justify-center items-center text-center text-colorGreenWater rounded-full border border-transparent transition-all duration-600"
+      [ngClass]="{'bg-gray-700/20 shadow-sm backdrop-blur-md border-neutral-400': isScrolled, 'bg-transparent': !isScrolled}">
+      <a class="relative block font-mono py-2 border-b-0" href="#proyectos">Proyectos</a>
+      <a class="relative block font-mono py-2 border-b-0" href="#skills">Skills</a>
+      <a class="relative block font-mono py-2 border-b-0" href="#sobreMi">Sobre Mi</a>
+      <a class="relative block font-mono py-2 border-b-0" href="#contacto">Contacto</a>
     </nav>
-</header>
+  </header>
+  

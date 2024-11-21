@@ -10,6 +10,9 @@ module.exports = {
       },
       backgroundColor: {
         background: '#292f36',
+      },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif']
       }
     },
   },
