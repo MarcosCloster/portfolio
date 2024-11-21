@@ -1,8 +1,8 @@
-<header class="fixed w-full mx-auto justify-center items-center z-10 mt-2">
-    <nav class="flex w-auto gap-4 justify-center items-center text-base [&>a]:py-2">
-        <a class="relative block" href="#proyectos">Proyectos</a>
-        <a class="relative block" href="#skills">Skills</a>
-        <a class="relative block" href="#sobreMi">Sobre Mi</a>
-        <a class="relative block" href="#contacto">Contacto</a>
+<header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2">
+    <nav class="flex w-auto px-5 max-w gap-4 justify-center items-center text-center text-colorGreenWater rounded-full border border-transparent transition-all duration-400" [ngClass]="{'bg-gray-700 shadow-sm backdrop-blur-xl': isScrolled, 'bg-transparent': !isScrolled}">
+        <a class="relative block py-2" href="#proyectos">Proyectos</a>
+        <a class="relative block py-2" href="#skills">Skills</a>
+        <a class="relative block py-2" href="#sobreMi">Sobre Mi</a>
+        <a class="relative block py-2" href="#contacto">Contacto</a>
     </nav>
 </header>
