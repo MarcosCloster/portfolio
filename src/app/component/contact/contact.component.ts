@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contact',
@@ -12,7 +13,6 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 })
 export class ContactComponent{
   form = inject(FormBuilder)
-  
   http = inject(HttpClient)
 
   formulario = this.form.group({
@@ -22,25 +22,22 @@ export class ContactComponent{
   })
 
   onSubmit() {
-    
     if (this.formulario.valid) {
-      const formData = {
-        email: this.formulario.get('email')?.value,
-        asunto: this.formulario.get('asunto')?.value,
-        mensaje: this.formulario.get('mensaje')?.value
-      };
-
-      this.http.post('/.netlify/functions/submitForm', formData).subscribe(
-        response => {
-          console.log('Formulario enviado', response);
-        },
-        error => {
+      this.http.post('https://submit-form.com/VDPLCeq9E', this.formulario.value)
+        .subscribe(response => {
+          console.log('Datos enviados exitosamente');
+          this.showAlert();
+        }, error => {
           console.error('Error al enviar formulario', error);
-        }
-      );
-    } else {
-      console.log('Formulario no válido');
+        });
     }
+  }
+
+  showAlert(){
+    Swal.fire({
+      title: "Se envio el mensaje",
+      icon: "success"
+    });
   }
 
 }
