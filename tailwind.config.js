@@ -15,6 +15,12 @@ module.exports = {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
         spaceMono: ['Space Mono', 'sans-serif']
+      },
+      width: {
+        forms: '450px'
+      },
+      borderColor: {
+        colorGreenWater: '#12f7d6'
       }
     },
   },
