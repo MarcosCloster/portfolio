@@ -13,7 +13,8 @@ module.exports = {
         background: '#292f36',
       },
       fontFamily: {
-        poppins: ['Poppins', 'sans-serif']
+        poppins: ['Poppins', 'sans-serif'],
+        spaceMono: ['Space Mono', 'sans-serif']
       }
     },
   },
