@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       colors: {
         colorGreenWater: '#12f7d6',
+        title: '#85fae8'
       },
       backgroundColor: {
         background: '#292f36',
