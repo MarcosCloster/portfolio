@@ -10,6 +10,7 @@ exports.handler = async (event) => {
       // Enviar datos a Formspark
       const response = await axios.post('https://api.formspark.io/YOUR_FORM_ID', {
         email,
+        asunto,
         mensaje,
       }, {
         headers: {

@@ -22,13 +22,24 @@ export class ContactComponent{
   })
 
   onSubmit() {
+    
     if (this.formulario.valid) {
-      this.http.post('https://submit-form.com/VDPLCeq9E', this.formulario.value)
-        .subscribe(response => {
-          console.log('Datos enviados exitosamente');
-        }, error => {
+      const formData = {
+        email: this.formulario.get('email')?.value,
+        asunto: this.formulario.get('asunto')?.value,
+        mensaje: this.formulario.get('mensaje')?.value
+      };
+
+      this.http.post('/.netlify/functions/submitForm', formData).subscribe(
+        response => {
+          console.log('Formulario enviado', response);
+        },
+        error => {
           console.error('Error al enviar formulario', error);
-        });
+        }
+      );
+    } else {
+      console.log('Formulario no válido');
     }
   }
 
