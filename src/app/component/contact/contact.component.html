@@ -12,32 +12,52 @@
             <h1 class="font-poppins text-title font-bold text-3xl">Contactame </h1>
         </div>
         <div class="flex flex-col w-full justify-center py-8">
-            <form class="max-w-md mx-auto flex justify-center items-center flex-col" action="https://formsubmit.co/marcoscloster04@gmail.com" method="POST">
+            <form class="max-w-md mx-auto flex justify-center items-center flex-col" [formGroup]="formulario">
                 <div class="relative z-0 w-full mb-5 group">
-                    <input type="email" name="email" id="email"
+                    <input type="email" name="email" id="email" formControlName="email"
                         class="block py-2.5 px-0 w-forms text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-colorGreenWater focus:outline-none focus:ring-0 focus:border-colorGreenWater peer"
-                        placeholder=" " required />
+                        [ngClass]="{'dark:focus:border-red-500 dark:border-red-700 dark:text-red-900 focus:border-red-500' : formulario.get('email')?.invalid && formulario.get('email')?.touched}"
+                        autocomplete="off"
+                        placeholder="" required />
                     <label for="email"
+                        [ngClass]="{'dark:text-red-700 peer-focus:dark:text-red-700' : formulario.get('email')?.invalid && formulario.get('email')?.touched}"
                         class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-colorGreenWater peer-focus:dark:text-colorGreenWater peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email
                     </label>
+                    @if (formulario.get('email')?.invalid && formulario.get('email')?.touched) {
+                        <p class="mt-2 text-sm text-red-600 dark:text-red-500">Ingrese un mail valido</p>
+                    }
                 </div>
                 <div class="relative z-0 w-full mb-5 group">
-                    <input type="text" name="asunto" id="asunto"
+                    <input type="text" name="asunto" id="asunto" formControlName="asunto"
                         class="block py-2.5 px-0 w-forms text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-colorGreenWater focus:outline-none focus:ring-0 focus:border-colorGreenWater peer"
+                        [ngClass]="{'dark:focus:border-red-500 dark:border-red-700 dark:text-red-900 focus:border-red-500' : formulario.get('asunto')?.invalid && formulario.get('asunto')?.touched}"
+                        autocomplete="off"
                         placeholder=" " required />
                     <label for="asunto"
+                        [ngClass]="{'dark:text-red-700 peer-focus:dark:text-red-700' : formulario.get('asunto')?.invalid && formulario.get('asunto')?.touched}"
                         class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-colorGreenWater peer-focus:dark:text-colorGreenWater peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Asunto</label>
-                </div>
+                        @if (formulario.get('asunto')?.invalid && formulario.get('asunto')?.touched) {
+                            <p class="mt-2 text-sm text-red-600 dark:text-red-500">Minimo de 6 letras</p>
+                        }
+                    </div>
 
                 <div class="relative z-0 w-full mb-5 group">
-                    <textarea type="" name="mensaje" id="mensaje"
+                    <textarea type="" name="mensaje" id="mensaje" formControlName="mensaje"
                         class="block h-10 min-h-24 max-h-36 pt-2.5 pb-0 px-0 w-forms text-base text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-colorGreenWater focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        [ngClass]="{'dark:focus:border-red-500 dark:border-red-700 dark:text-red-900 focus:border-red-500' : formulario.get('mensaje')?.invalid && formulario.get('mensaje')?.touched}"
+                        autocomplete="off"
                         placeholder=" " required></textarea>
                     <label for="mensaje"
+                        [ngClass]="{'dark:text-red-700 peer-focus:dark:text-red-700' : formulario.get('mensaje')?.invalid && formulario.get('mensaje')?.touched}"
                         class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-colorGreenWater peer-focus:dark:text-colorGreenWater peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Mensaje
                     </label>
+                    @if (formulario.get('mensaje')?.invalid && formulario.get('mensaje')?.touched) {
+                        <p class="mt-2 text-sm text-red-600 dark:text-red-500">Minimo 10 letras</p>
+                    }
                 </div>
                 <button type="submit"
+                    (click)="onSubmit()"
+                    [disabled]="formulario.invalid"
                     class="text-white hover:bg-teal-200 hover:text-slate-700 transition-colors duration-300 ease-in-out focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base w-10 sm:w-52 px-4 py-2 text-center bg-gray-700/20 shadow-md border border-gray-600 ">Submit</button>
             </form>
 
