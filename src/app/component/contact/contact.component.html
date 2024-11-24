@@ -15,44 +15,44 @@
             <form class="w-60 flex md:w-full flex-col items-center justify-center" [formGroup]="formulario">
                 <div class="relative z-0 mb-5 group ">
                     <input type="email" name="email" id="email" formControlName="email"
-                        class="block w-full py-2.5 px-0 md:w-forms text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-colorGreenWater focus:outline-none focus:ring-0 focus:border-colorGreenWater peer"
-                        [ngClass]="{'dark:focus:border-red-500 dark:border-red-700 dark:text-red-900 focus:border-red-500' : formulario.get('email')?.invalid && formulario.get('email')?.touched}"
+                        class="block w-full py-2.5 px-0 md:w-forms text-sm  bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-white focus:border-colorGreenWater focus:outline-none focus:ring-0 peer"
+                        [ngClass]="{'border-red-700 text-red-700 focus:border-red-500' : formulario.get('email')?.invalid && formulario.get('email')?.touched}"
                         autocomplete="off"
                         placeholder="" required />
                     <label for="email"
-                        [ngClass]="{'dark:text-red-700 peer-focus:dark:text-red-700' : formulario.get('email')?.invalid && formulario.get('email')?.touched}"
-                        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-colorGreenWater peer-focus:dark:text-colorGreenWater peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email
+                        [ngClass]="{'text-red-700 peer-focus:text-red-700' : formulario.get('email')?.invalid && formulario.get('email')?.touched}"
+                        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-colorGreenWater peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email
                     </label>
                     @if (formulario.get('email')?.invalid && formulario.get('email')?.touched) {
-                        <p class="mt-2 text-sm text-red-600 dark:text-red-500">Ingrese un mail valido</p>
+                        <p class="mt-2 text-sm text-red-600">Ingrese un mail valido</p>
                     }
                 </div>
                 <div class="relative z-0 mb-5 group">
                     <input type="text" name="asunto" id="asunto" formControlName="asunto"
-                        class="block w-full py-2.5 px-0 md:w-forms text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-colorGreenWater focus:outline-none focus:ring-0 focus:border-colorGreenWater peer"
-                        [ngClass]="{'dark:focus:border-red-500 dark:border-red-700 dark:text-red-900 focus:border-red-500' : formulario.get('asunto')?.invalid && formulario.get('asunto')?.touched}"
+                        class="block w-full py-2.5 px-0 md:w-forms text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-colorGreenWater peer"
+                        [ngClass]="{' border-red-700 text-red-700 focus:border-red-500' : formulario.get('asunto')?.invalid && formulario.get('asunto')?.touched}"
                         autocomplete="off"
                         placeholder=" " required />
                     <label for="asunto"
-                        [ngClass]="{'dark:text-red-700 peer-focus:dark:text-red-700' : formulario.get('asunto')?.invalid && formulario.get('asunto')?.touched}"
-                        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-colorGreenWater peer-focus:dark:text-colorGreenWater peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Asunto</label>
+                        [ngClass]="{'text-red-700 peer-focus:text-red-700' : formulario.get('asunto')?.invalid && formulario.get('asunto')?.touched}"
+                        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-colorGreenWater peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Asunto</label>
                         @if (formulario.get('asunto')?.invalid && formulario.get('asunto')?.touched) {
-                            <p class="mt-2 text-sm text-red-600 dark:text-red-500">Minimo de 6 letras</p>
+                            <p class="mt-2 text-sm text-red-600">Minimo de 4 letras</p>
                         }
                     </div>
 
                 <div class="relative z-0 mb-5 group">
                     <textarea type="" name="mensaje" id="mensaje" formControlName="mensaje"
-                        class="block w-full h-10 min-h-24 max-h-36 pt-2.5 pb-0 px-0 md:w-forms text-base text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-colorGreenWater focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                        [ngClass]="{'dark:focus:border-red-500 dark:border-red-700 dark:text-red-900 focus:border-red-500' : formulario.get('mensaje')?.invalid && formulario.get('mensaje')?.touched}"
+                        class="block w-full h-10 min-h-24 max-h-36 pt-2.5 pb-0 px-0 md:w-forms text-base bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-white focus:border-colorGreenWater focus:outline-none focus:ring-0 peer"
+                        [ngClass]="{'border-red-700 text-red-700 focus:border-red-500' : formulario.get('mensaje')?.invalid && formulario.get('mensaje')?.touched}"
                         autocomplete="off"
                         placeholder=" " required></textarea>
                     <label for="mensaje"
-                        [ngClass]="{'dark:text-red-700 peer-focus:dark:text-red-700' : formulario.get('mensaje')?.invalid && formulario.get('mensaje')?.touched}"
-                        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-colorGreenWater peer-focus:dark:text-colorGreenWater peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Mensaje
+                        [ngClass]="{'text-red-700 peer-focus:text-red-700' : formulario.get('mensaje')?.invalid && formulario.get('mensaje')?.touched}"
+                        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-colorGreenWater peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Mensaje
                     </label>
                     @if (formulario.get('mensaje')?.invalid && formulario.get('mensaje')?.touched) {
-                        <p class="mt-2 text-sm text-red-600 dark:text-red-500">Minimo 10 letras</p>
+                        <p class="mt-2 text-sm text-red-600">Minimo 10 letras</p>
                     }
                 </div>
                 <button type="submit"
